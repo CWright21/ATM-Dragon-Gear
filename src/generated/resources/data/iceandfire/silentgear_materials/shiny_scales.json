@@ -1,0 +1,34 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "organic",
+      "advanced"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "item": "iceandfire:shiny_scales"
+    },
+    "part_substitutes": {}
+  },
+  "display": {
+    "color": "#FFCE4646",
+    "main_texture_type": "LOW_CONTRAST",
+    "name": "Shiny Scale",
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:lining": {
+      "enchantment_value": 0.2,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:aquatic"
+        }
+      ]
+    }
+  }
+}

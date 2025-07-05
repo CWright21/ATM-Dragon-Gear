@@ -1,0 +1,21 @@
+{
+  "conditions": [
+    {
+      "type": "silentgear:gear_type",
+      "gear_type": "silentgear:armor"
+    }
+  ],
+  "description": {
+    "translate": "trait.dragongear.dragon_protection.desc"
+  },
+  "effects": [
+    {
+      "type": "silentgear:attribute",
+      "attribute_modifiers": {}
+    }
+  ],
+  "max_level": 5,
+  "name": {
+    "translate": "trait.dragongear.dragon_protection"
+  }
+}

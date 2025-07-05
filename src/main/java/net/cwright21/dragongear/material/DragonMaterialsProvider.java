@@ -23,7 +23,7 @@ import net.silentchaos512.gear.setup.gear.PartTypes;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.util.Color;
 import com.mojang.brigadier.Message;
-
+import com.iafenvoy.iceandfire.data.TrollType;
 import com.iafenvoy.iceandfire.registry.IafItems;
 
 
@@ -146,7 +146,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .mainStatsArmor(7, 12, 9, 6, 6, 10)
                 .mainStatsMelee(20, 12, 0.1f)
                 .trait(PartTypes.MAIN, Const.Traits.HEAVY, 1)
-                // TODO: Add Reduced Breath damage 2
+                .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 2)
 
         );
         
@@ -160,7 +160,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .mainStatsArmor(7, 12, 9, 6, 6, 10)
                 .mainStatsMelee(24, 8, 0.1f)
                 .trait(PartTypes.MAIN, Const.Traits.HEAVY, 1)
-                // TODO: Add Reduced Breath damage 2
+                .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 2)
 
         );
         
@@ -174,7 +174,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .mainStatsArmor(7, 12, 9, 6, 6, 10)
                 .mainStatsMelee(24, 8, 0.1f)
                 .trait(PartTypes.MAIN, Const.Traits.HEAVY, 1)
-                // TODO: Add Reduced Breath damage 2
+                .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 2)
 
         );
         
@@ -202,11 +202,38 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
     }
     
     private void addTrollHides(Collection<MaterialBuilder<?>> ret) {
-    	//TODO: Frost troll hide
+        ret.add(MaterialBuilder.simple(IceAndFireMaterials.TROLL_LEATHER_FROST.getMaterial())
+                .crafting(TrollType.FROST.leather.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Frost Troll Leather"),0xce4646, TextureType.LOW_CONTRAST)
+                //main
+                .mainStatsCommon(300, 4, 12, 8, 0.9f)
+                .mainStatsArmor(7, 12, 9, 6, 6, 10)
+                .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.THICK_HIDE, 1)
+                .trait(PartTypes.GRIP, Const.Traits.STURDY, 1)
+        );
     	
-    	//TODO: Forest troll hide
+        ret.add(MaterialBuilder.simple(IceAndFireMaterials.TROLL_LEATHER_FOREST.getMaterial())
+                .crafting(TrollType.FOREST.leather.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Forest Troll Leather"),0xce4646, TextureType.LOW_CONTRAST)
+                //main
+                .mainStatsCommon(300, 4, 12, 8, 0.9f)
+                .mainStatsArmor(7, 12, 9, 6, 6, 10)
+                .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.THICK_HIDE, 1)
+                .trait(PartTypes.GRIP, Const.Traits.STURDY, 1)
+        );
     	
-    	//TODO: Mountain troll hide
+        ret.add(MaterialBuilder.simple(IceAndFireMaterials.TROLL_LEATHER_MOUNTAIN.getMaterial())
+                .crafting(TrollType.MOUNTAIN.leather.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Mountain Troll Leather"),0xce4646, TextureType.LOW_CONTRAST)
+                //main
+                .mainStatsCommon(300, 4, 12, 8, 0.9f)
+                .mainStatsArmor(7, 12, 9, 6, 6, 10)
+                .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.THICK_HIDE, 1)
+                .trait(PartTypes.GRIP, Const.Traits.STURDY, 1)
+        );
     	
     }
     
@@ -214,18 +241,40 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
         ret.add(MaterialBuilder.simple(IceAndFireMaterials.SHINY_SCALES.getMaterial())
                 .crafting(IafItems.SHINY_SCALES.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
                 .display(getDisplayName("Shiny Scale"),0xce4646, TextureType.LOW_CONTRAST)
-                //main
+                
                 .stat(PartTypes.LINING, GearProperties.ENCHANTMENT_VALUE, 2f)
                 .trait(PartTypes.LINING, Const.Traits.AQUATIC, 1)
         );
     }
     
     private void addDragonBloodCoatings(Collection<MaterialBuilder<?>> ret) {
-    	//TODO: all add 4 magic damage
+    	ret.add(MaterialBuilder.simple(IceAndFireMaterials.FIRE_DRAGON_BLOOD.getMaterial())
+                .crafting(IafItems.FIRE_DRAGON_BLOOD.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Fire Dragon Blood"),0xce4646, TextureType.LOW_CONTRAST)
+                
+                .stat(PartTypes.COATING, GearProperties.MAGIC_DAMAGE, 8f, NumberProperty.Operation.ADD)
+                
+            	//TODO: Fire Blood effect : ignite and knockback? via custom trait
+        );
     	
-    	//TODO: Fire Blood effect : ignite and knockback?
-    	//TODO: Ice Blood effect : freeze?
-    	//TODO: Lightning Blood effect : lightning?
+    	ret.add(MaterialBuilder.simple(IceAndFireMaterials.ICE_DRAGON_BLOOD.getMaterial())
+                .crafting(IafItems.ICE_DRAGON_BLOOD.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Ice Dragon Blood"),0xce4646, TextureType.LOW_CONTRAST)
+                
+                .stat(PartTypes.COATING, GearProperties.MAGIC_DAMAGE, 8f, NumberProperty.Operation.ADD)
+                
+                //TODO: Ice Blood effect : freeze?
+        );
+    	
+    	ret.add(MaterialBuilder.simple(IceAndFireMaterials.LIGHTNING_DRAGON_BLOOD.getMaterial())
+                .crafting(IafItems.LIGHTNING_DRAGON_BLOOD.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Lightning Dragon Blood"),0xce4646, TextureType.LOW_CONTRAST)
+                
+                .stat(PartTypes.COATING, GearProperties.MAGIC_DAMAGE, 8f, NumberProperty.Operation.ADD)
+                
+                //TODO: Lightning Blood effect : lightning?
+        );
+    	
     }
     
     //this is the more correct way, but this seems to also include [] in the name

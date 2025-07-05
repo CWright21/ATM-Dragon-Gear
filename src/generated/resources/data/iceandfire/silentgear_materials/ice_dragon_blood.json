@@ -9,26 +9,22 @@
     ],
     "gear_type_blacklist": [],
     "ingredient": {
-      "item": "iceandfire:shiny_scales"
+      "item": "iceandfire:ice_dragon_blood"
     },
     "part_substitutes": {}
   },
   "display": {
     "color": "#FFCE4646",
     "main_texture_type": "LOW_CONTRAST",
-    "name": "Shiny Scale",
+    "name": "Ice Dragon Blood",
     "name_prefix": ""
   },
   "properties": {
-    "silentgear:lining": {
-      "enchantment_value": 2.0,
-      "traits": [
-        {
-          "conditions": [],
-          "level": 1,
-          "trait": "silentgear:aquatic"
-        }
-      ]
+    "silentgear:coating": {
+      "magic_damage": {
+        "operation": "ADD",
+        "value": 8.0
+      }
     }
   }
 }

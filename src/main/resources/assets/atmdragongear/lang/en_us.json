@@ -1,13 +1,14 @@
 {
-  "itemGroup.atmdragongear": "Example Mod Tab",
-  "block.atmdragongear.example_block": "Example Block",
-  "item.atmdragongear.example_item": "Example Item",
+  "itemGroup.dragongear": "Example Mod Tab",
+  "block.dragongear.example_block": "Example Block",
+  "item.dragongear.example_item": "Example Item",
 
-  "atmdragongear.configuration.title": "ATM Dragon Gear Configs",
-  "atmdragongear.configuration.section.atmdragongear.common.toml": "ATM Dragon Gear Configs",
-  "atmdragongear.configuration.section.atmdragongear.common.toml.title": "ATM Dragon Gear Configs",
-  "atmdragongear.configuration.items": "Item List",
-  "atmdragongear.configuration.logDirtBlock": "Log Dirt Block",
-  "atmdragongear.configuration.magicNumberIntroduction": "Magic Number Text",
-  "atmdragongear.configuration.magicNumber": "Magic Number"
+  "dragongear.configuration.title": "Dragon Gear Configs",
+  "dragongear.configuration.section.dragongear.common.toml": "Dragon Gear Configs",
+  "dragongear.configuration.section.dragongear.common.toml.title": "Dragon Gear Configs",
+  "dragongear.configuration.items": "Item List",
+  "dragongear.configuration.logDirtBlock": "Log Dirt Block",
+  "dragongear.configuration.magicNumberIntroduction": "Magic Number Text",
+  "dragongear.configuration.magicNumber": "Magic Number"
+  "trait.dragongear.thick_hide": "Translation"
 }

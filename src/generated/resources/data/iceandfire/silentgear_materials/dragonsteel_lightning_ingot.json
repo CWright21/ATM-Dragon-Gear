@@ -42,6 +42,11 @@
           "conditions": [],
           "level": 1,
           "trait": "silentgear:heavy"
+        },
+        {
+          "conditions": [],
+          "level": 2,
+          "trait": "dragongear:dragon_protection"
         }
       ]
     }

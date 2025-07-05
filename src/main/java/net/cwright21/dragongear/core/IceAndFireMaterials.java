@@ -26,7 +26,13 @@ public enum IceAndFireMaterials {
 	ICE_DRAGONSTEEL("dragonsteel_ice_ingot", "4", Tiers.NETHERITE),
 	FIRE_DRAGONSTEEL("dragonsteel_fire_ingot", "4", Tiers.NETHERITE),
 	LIGHTNING_DRAGONSTEEL("dragonsteel_lightning_ingot", "4", Tiers.NETHERITE),
-	SHINY_SCALES("shiny_scales", "2", Tiers.IRON);
+	SHINY_SCALES("shiny_scales", "2", Tiers.IRON),
+	FIRE_DRAGON_BLOOD("fire_dragon_blood", "3", Tiers.DIAMOND),
+	ICE_DRAGON_BLOOD("ice_dragon_blood", "3", Tiers.DIAMOND),
+	LIGHTNING_DRAGON_BLOOD("lightning_dragon_blood", "3", Tiers.DIAMOND),
+	TROLL_LEATHER_FOREST("troll_leather_forest", "2", Tiers.IRON),
+	TROLL_LEATHER_FROST("troll_leather_frost", "2", Tiers.IRON),
+	TROLL_LEATHER_MOUNTAIN("troll_leather_mountain", "2", Tiers.IRON);
 	
 	private final ResourceLocation id;
     private final DataResource<Material> material;

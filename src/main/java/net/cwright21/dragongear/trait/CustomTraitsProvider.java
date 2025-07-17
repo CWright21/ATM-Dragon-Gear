@@ -52,7 +52,6 @@ public class CustomTraitsProvider extends TraitsProviderBase{
         );
 		 */
 		
-		//TODO: Troll proj prot effect
 		ret.add(TraitBuilder.of(Const.Traits.THICK_HIDE, 5)
                 .effects(AttributeTraitEffect.builder()
                         .build()
@@ -60,7 +59,6 @@ public class CustomTraitsProvider extends TraitsProviderBase{
                 .withGearTypeCondition(GearTypes.ARMOR)
         );
 		
-		//TODO: Dragon breath prot effect
 		ret.add(TraitBuilder.of(Const.Traits.DRAGON_PROTECTION, 5)
                 .effects(AttributeTraitEffect.builder()
                         .build()

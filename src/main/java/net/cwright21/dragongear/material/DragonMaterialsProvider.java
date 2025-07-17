@@ -136,7 +136,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
     
     private void addDragonSteel(Collection<MaterialBuilder<?>> ret) {
         
-    	// lightning
+    	// lightning (more magic damage)
         ret.add(MaterialBuilder.simple(IceAndFireMaterials.LIGHTNING_DRAGONSTEEL.getMaterial())
                 .crafting(IafItems.DRAGONSTEEL_LIGHTNING_INGOT.get(), MaterialCategories.METAL, MaterialCategories.ENDGAME )
                 .display(getDisplayName("Lightning Dragonsteel"),0x3e2547, TextureType.LOW_CONTRAST)
@@ -161,6 +161,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .mainStatsMelee(24, 8, 0.1f)
                 .trait(PartTypes.MAIN, Const.Traits.HEAVY, 1)
                 .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 2)
+                //TODO: add ice damage trait
 
         );
         
@@ -175,24 +176,53 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .mainStatsMelee(24, 8, 0.1f)
                 .trait(PartTypes.MAIN, Const.Traits.HEAVY, 1)
                 .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 2)
+                //TODO: add fire damage trait
 
         );
         
     }
     
     private void addDragonScales(Collection<MaterialBuilder<?>> ret) {
-        
     	// lightning
-        // put lightning colors here Map<IceAndFireMaterials.ITEM_NAME, IafItems.ITEM_NAME.get()>
-        
+        /* electric blue
+         * copper
+         * amethyst
+         * black
+         */
+    	
         // ice
-        // put ice colors here Map<IceAndFireMaterials.ITEM_NAME, IafItems.ITEM_NAME.get()>
+    	/* blue
+    	 * white
+    	 * sapphire
+    	 * silver
+    	 */
         
         // fire
-    	// put fire colors here Map<IceAndFireMaterials.ITEM_NAME, IafItems.ITEM_NAME.get()>
+    	/* red
+    	 * emerald
+    	 * bronze
+    	 * gray
+    	 */
+    	Map<IceAndFireMaterials, Item> fireDragonScales = Map.of(
+    			IceAndFireMaterials.DRAGONSCALES_RED, IafItems.DRAGONSCALES_RED.get(),
+    			IceAndFireMaterials.DRAGONSCALES_EMERALD, IafItems.DRAGONSCALES_GREEN.get(),
+    			IceAndFireMaterials.DRAGONSCALES_BRONZE, IafItems.DRAGONSCALES_BRONZE.get(),
+    			IceAndFireMaterials.DRAGONSCALES_GREY, IafItems.DRAGONSCALES_GRAY.get()
+    			);
     	
-    	//for each color item_name
-    	//build material
+    	for(IceAndFireMaterials material : fireDragonScales.keySet()) {
+    		ret.add(MaterialBuilder.simple(material.getMaterial())
+                    .crafting(fireDragonScales.get(material), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                    .display(getDisplayName("Fire Dragon Scale"),0xce4646, TextureType.LOW_CONTRAST)
+                    //main
+                    .mainStatsCommon(500, 4, 12, 8, 0.9f)
+                    .mainStatsArmor(5, 9, 7, 5, 2, 15)
+                    .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                    .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 1)
+            );
+    	}
+    	
+    	
     	
     	// TODO: lightning specific stats
     	// TODO: Ice specific stats
@@ -207,7 +237,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .display(getDisplayName("Frost Troll Leather"),0xce4646, TextureType.LOW_CONTRAST)
                 //main
                 .mainStatsCommon(300, 4, 12, 8, 0.9f)
-                .mainStatsArmor(7, 12, 9, 6, 6, 10)
+                .mainStatsArmor(7, 12, 9, 6, 1, 10)
                 .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
                 .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.THICK_HIDE, 1)
                 .trait(PartTypes.GRIP, Const.Traits.STURDY, 1)
@@ -218,7 +248,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .display(getDisplayName("Forest Troll Leather"),0xce4646, TextureType.LOW_CONTRAST)
                 //main
                 .mainStatsCommon(300, 4, 12, 8, 0.9f)
-                .mainStatsArmor(7, 12, 9, 6, 6, 10)
+                .mainStatsArmor(7, 12, 9, 6, 1, 10)
                 .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
                 .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.THICK_HIDE, 1)
                 .trait(PartTypes.GRIP, Const.Traits.STURDY, 1)
@@ -229,7 +259,7 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 .display(getDisplayName("Mountain Troll Leather"),0xce4646, TextureType.LOW_CONTRAST)
                 //main
                 .mainStatsCommon(300, 4, 12, 8, 0.9f)
-                .mainStatsArmor(7, 12, 9, 6, 6, 10)
+                .mainStatsArmor(3, 7, 5, 2, 1, 10)
                 .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
                 .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.THICK_HIDE, 1)
                 .trait(PartTypes.GRIP, Const.Traits.STURDY, 1)

@@ -9,38 +9,29 @@
     ],
     "gear_type_blacklist": [],
     "ingredient": {
-      "item": "iceandfire:troll_leather_frost"
+      "item": "iceandfire:dragonscales_red"
     },
     "part_substitutes": {}
   },
   "display": {
     "color": "#FFCE4646",
     "main_texture_type": "LOW_CONTRAST",
-    "name": "Frost Troll Leather",
+    "name": "Fire Dragon Scale",
     "name_prefix": ""
   },
   "properties": {
-    "silentgear:grip": {
-      "traits": [
-        {
-          "conditions": [],
-          "level": 1,
-          "trait": "silentgear:sturdy"
-        }
-      ]
-    },
     "silentgear:main": {
-      "armor": 34.0,
-      "armor/boots": 6.0,
-      "armor/chestplate": 12.0,
-      "armor/helmet": 7.0,
-      "armor/leggings": 9.0,
+      "armor": 26.0,
+      "armor/boots": 5.0,
+      "armor/chestplate": 9.0,
+      "armor/helmet": 5.0,
+      "armor/leggings": 7.0,
       "armor_durability": 4.0,
-      "armor_toughness": 1.0,
+      "armor_toughness": 2.0,
       "charging_value": 0.9,
-      "durability": 300.0,
+      "durability": 500.0,
       "enchantment_value": 12.0,
-      "magic_armor": 10.0,
+      "magic_armor": 15.0,
       "rarity": 8.0,
       "traits": [
         {
@@ -51,7 +42,7 @@
         {
           "conditions": [],
           "level": 1,
-          "trait": "dragongear:thick_hide"
+          "trait": "dragongear:dragon_protection"
         }
       ]
     }

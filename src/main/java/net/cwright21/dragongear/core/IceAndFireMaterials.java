@@ -36,7 +36,15 @@ public enum IceAndFireMaterials {
 	DRAGONSCALES_RED("dragonscales_red", "3", Tiers.DIAMOND),
 	DRAGONSCALES_EMERALD("dragonscales_emerald", "3", Tiers.DIAMOND),
 	DRAGONSCALES_BRONZE("dragonscales_bronze", "3", Tiers.DIAMOND),
-	DRAGONSCALES_GREY("dragonscales_grey", "3", Tiers.DIAMOND);
+	DRAGONSCALES_GREY("dragonscales_grey", "3", Tiers.DIAMOND),
+	DRAGONSCALES_BLUE("dragonscales_blue", "3", Tiers.DIAMOND),
+	DRAGONSCALES_WHITE("dragonscales_white", "3", Tiers.DIAMOND),
+	DRAGONSCALES_SAPPHIRE("dragonscales_sapphire", "3", Tiers.DIAMOND),
+	DRAGONSCALES_SILVER("dragonscales_silver", "3", Tiers.DIAMOND),
+	DRAGONSCALES_ELECTRICBLUE("dragonscales_electricblue", "3", Tiers.DIAMOND),
+	DRAGONSCALES_COPPER("dragonscales_copper", "3", Tiers.DIAMOND),
+	DRAGONSCALES_AMETHYST("dragonscales_amethyst", "3", Tiers.DIAMOND),
+	DRAGONSCALES_BLACK("dragonscales_black", "3", Tiers.DIAMOND);
 	
 	private final ResourceLocation id;
     private final DataResource<Material> material;

@@ -183,26 +183,44 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
     }
     
     private void addDragonScales(Collection<MaterialBuilder<?>> ret) {
-    	// lightning
-        /* electric blue
-         * copper
-         * amethyst
-         * black
-         */
+    	Map<IceAndFireMaterials, Item> lightningDragonScales = Map.of(
+    			IceAndFireMaterials.DRAGONSCALES_ELECTRICBLUE, IafItems.DRAGONSCALES_ELECTRIC.get(),
+    			IceAndFireMaterials.DRAGONSCALES_COPPER, IafItems.DRAGONSCALES_COPPER.get(),
+    			IceAndFireMaterials.DRAGONSCALES_AMETHYST, IafItems.DRAGONSCALES_AMETHYST.get(),
+    			IceAndFireMaterials.DRAGONSCALES_BLACK, IafItems.DRAGONSCALES_BLACK.get()
+    			);
     	
-        // ice
-    	/* blue
-    	 * white
-    	 * sapphire
-    	 * silver
-    	 */
+    	for(IceAndFireMaterials material : lightningDragonScales.keySet()) {
+    		ret.add(MaterialBuilder.simple(material.getMaterial())
+                    .crafting(lightningDragonScales.get(material), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                    .display(getDisplayName("Lightning Dragon Scale"),0xce4646, TextureType.LOW_CONTRAST)
+                    //main
+                    .mainStatsCommon(500, 4, 12, 8, 0.9f)
+                    .mainStatsArmor(5, 9, 7, 5, 1.5f, 20)
+                    .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                    .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 1)
+            );
+    	}
+    	
+    	Map<IceAndFireMaterials, Item> iceDragonScales = Map.of(
+    			IceAndFireMaterials.DRAGONSCALES_BLUE, IafItems.DRAGONSCALES_BLUE.get(),
+    			IceAndFireMaterials.DRAGONSCALES_WHITE, IafItems.DRAGONSCALES_WHITE.get(),
+    			IceAndFireMaterials.DRAGONSCALES_SAPPHIRE, IafItems.DRAGONSCALES_SAPPHIRE.get(),
+    			IceAndFireMaterials.DRAGONSCALES_SILVER, IafItems.DRAGONSCALES_SILVER.get()
+    			);
+    	
+    	for(IceAndFireMaterials material : iceDragonScales.keySet()) {
+    		ret.add(MaterialBuilder.simple(material.getMaterial())
+                    .crafting(iceDragonScales.get(material), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                    .display(getDisplayName("Ice Dragon Scale"),0xce4646, TextureType.LOW_CONTRAST)
+                    //main
+                    .mainStatsCommon(500, 4, 12, 8, 0.9f)
+                    .mainStatsArmor(5, 9, 7, 5, 2, 15)
+                    .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                    .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 1)
+            );
+    	}
         
-        // fire
-    	/* red
-    	 * emerald
-    	 * bronze
-    	 * gray
-    	 */
     	Map<IceAndFireMaterials, Item> fireDragonScales = Map.of(
     			IceAndFireMaterials.DRAGONSCALES_RED, IafItems.DRAGONSCALES_RED.get(),
     			IceAndFireMaterials.DRAGONSCALES_EMERALD, IafItems.DRAGONSCALES_GREEN.get(),
@@ -221,13 +239,6 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                     .trait(PartTypes.MAIN, net.cwright21.dragongear.util.Const.Traits.DRAGON_PROTECTION, 1)
             );
     	}
-    	
-    	
-    	
-    	// TODO: lightning specific stats
-    	// TODO: Ice specific stats
-    	// TODO: Fire specific stats 
-    	// TODO: Add Reduced Breath damage 1
     
     }
     

@@ -1,0 +1,33 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "organic",
+      "advanced"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "item": "iceandfire:stymphalian_bird_feather"
+    },
+    "part_substitutes": {}
+  },
+  "display": {
+    "color": "#FFCE4646",
+    "main_texture_type": "LOW_CONTRAST",
+    "name": "Stymphalian Feather",
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:fletching": {
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "dragongear:stymphalian"
+        }
+      ]
+    }
+  }
+}

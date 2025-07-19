@@ -8,12 +8,7 @@
   "description": {
     "translate": "trait.dragongear.dragon_protection.desc"
   },
-  "effects": [
-    {
-      "type": "silentgear:attribute",
-      "attribute_modifiers": {}
-    }
-  ],
+  "effects": [],
   "max_level": 5,
   "name": {
     "translate": "trait.dragongear.dragon_protection"

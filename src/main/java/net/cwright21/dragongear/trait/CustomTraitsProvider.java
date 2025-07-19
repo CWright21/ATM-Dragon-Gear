@@ -53,17 +53,15 @@ public class CustomTraitsProvider extends TraitsProviderBase{
 		 */
 		
 		ret.add(TraitBuilder.of(Const.Traits.THICK_HIDE, 5)
-                .effects(AttributeTraitEffect.builder()
-                        .build()
-                )
                 .withGearTypeCondition(GearTypes.ARMOR)
         );
 		
 		ret.add(TraitBuilder.of(Const.Traits.DRAGON_PROTECTION, 5)
-                .effects(AttributeTraitEffect.builder()
-                        .build()
-                )
                 .withGearTypeCondition(GearTypes.ARMOR)
+        );
+		
+		ret.add(TraitBuilder.of(Const.Traits.STYMPHALIAN, 1)
+                .withGearTypeCondition(GearTypes.ARROW)
         );
 		
 		

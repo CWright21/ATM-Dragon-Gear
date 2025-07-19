@@ -46,6 +46,10 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
 		addTrollHides(ret);
 		addShinyScales(ret);
 		addDragonBloodCoatings(ret);
+		addSeaSerpentScales(ret);
+		addDeathWormChitin(ret);
+		addMyrmexChitin(ret);
+		addStymphalian(ret);
 		
         return ret;
 	}
@@ -316,6 +320,27 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
                 //TODO: Lightning Blood effect : lightning?
         );
     	
+    }
+    
+    private void addSeaSerpentScales(Collection<MaterialBuilder<?>> ret) {
+    	return;
+    }
+    
+    private void addDeathWormChitin(Collection<MaterialBuilder<?>> ret) {
+    	return;
+    }
+    
+    private void addMyrmexChitin(Collection<MaterialBuilder<?>> ret) {
+    	return;
+    }
+    private void addStymphalian(Collection<MaterialBuilder<?>> ret) {
+    	
+    	ret.add(MaterialBuilder.simple(IceAndFireMaterials.STYMPHALIAN_FEATHER.getMaterial())
+                .crafting(IafItems.STYMPHALIAN_BIRD_FEATHER.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                .display(getDisplayName("Stymphalian Feather"),0xce4646, TextureType.LOW_CONTRAST)
+                
+                .trait(PartTypes.FLETCHING, net.cwright21.dragongear.util.Const.Traits.STYMPHALIAN, 1)
+        );
     }
     
     //this is the more correct way, but this seems to also include [] in the name

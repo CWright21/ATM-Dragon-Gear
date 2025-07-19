@@ -1,12 +1,19 @@
 package net.cwright21.dragongear;
 
 import net.cwright21.dragongear.event.ServerEvents;
+import net.cwright21.dragongear.event.entity.projectile.ProjectileEvents;
 import net.cwright21.dragongear.material.DragonMaterialsProvider;
 import net.cwright21.dragongear.trait.CustomTraitsProvider;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.iafenvoy.uranus.event.LivingEntityEvents;
 
 
@@ -14,7 +21,8 @@ import com.iafenvoy.uranus.event.LivingEntityEvents;
 @EventBusSubscriber(modid = DragonGear.NAMESPACE)
 public class DragonGear {
     public static final String NAMESPACE = "dragongear";
-
+    public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
+    
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         var gen = event.getGenerator();
@@ -25,4 +33,14 @@ public class DragonGear {
         LivingEntityEvents.DAMAGE.register(ServerEvents::onEntityDamage);
     }
     
+    @SubscribeEvent
+    public static void onEntityJoinWorld(EntityJoinLevelEvent event) {
+    	ProjectileEvents.onArrowLoose(event);
+    }
+    
+    
+    @SubscribeEvent
+    public static void onArrowTick(EntityTickEvent.Post event) {
+    	ProjectileEvents.onArrowTick(event);
+    }
 }

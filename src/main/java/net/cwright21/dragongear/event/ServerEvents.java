@@ -11,6 +11,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.damagesource.DamageContainer;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -40,8 +41,10 @@ public class ServerEvents {
             int feetDragProt = TraitHelper.getTraitLevel(entity.getItemBySlot(EquipmentSlot.HEAD), Const.Traits.DRAGON_PROTECTION);
             amount *= 1f - (helmetDragProt + chestDragProt + legsDragProt + feetDragProt) * 0.05f;
         }
+        
         return amount;
     }
+	
 
 	
 }

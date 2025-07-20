@@ -1,0 +1,49 @@
+{
+  "type": "silentgear:simple",
+  "parent": "silentgear:empty",
+  "crafting": {
+    "can_salvage": true,
+    "categories": [
+      "organic",
+      "advanced"
+    ],
+    "gear_type_blacklist": [],
+    "ingredient": {
+      "item": "iceandfire:sea_serpent_scales_green"
+    },
+    "part_substitutes": {}
+  },
+  "display": {
+    "color": "#FF00AA00",
+    "main_texture_type": "LOW_CONTRAST",
+    "name": "greenSea Serpent Scale",
+    "name_prefix": ""
+  },
+  "properties": {
+    "silentgear:main": {
+      "armor": 23.0,
+      "armor/boots": 4.0,
+      "armor/chestplate": 7.0,
+      "armor/helmet": 4.0,
+      "armor/leggings": 8.0,
+      "armor_durability": 4.0,
+      "charging_value": 0.9,
+      "durability": 300.0,
+      "enchantment_value": 12.0,
+      "magic_armor": 25.0,
+      "rarity": 8.0,
+      "traits": [
+        {
+          "conditions": [],
+          "level": 1,
+          "trait": "silentgear:flexible"
+        },
+        {
+          "conditions": [],
+          "level": 2,
+          "trait": "silentgear:aquatic"
+        }
+      ]
+    }
+  }
+}

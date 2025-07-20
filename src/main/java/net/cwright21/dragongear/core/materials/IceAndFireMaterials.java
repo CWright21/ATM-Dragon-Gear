@@ -1,5 +1,6 @@
-package net.cwright21.dragongear.core;
+package net.cwright21.dragongear.core.materials;
 
+import net.cwright21.dragongear.DragonGear;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -45,7 +46,8 @@ public enum IceAndFireMaterials {
 	DRAGONSCALES_COPPER("dragonscales_copper", "3", Tiers.DIAMOND),
 	DRAGONSCALES_AMETHYST("dragonscales_amethyst", "3", Tiers.DIAMOND),
 	DRAGONSCALES_BLACK("dragonscales_black", "3", Tiers.DIAMOND),
-	STYMPHALIAN_FEATHER("stymphalian_feather", "3", Tiers.DIAMOND);
+	STYMPHALIAN_FEATHER("stymphalian_feather", "3", Tiers.DIAMOND),
+	SEA_SERPENT_SCALES("sea_serpent_scale", "3", Tiers.DIAMOND);
 	
 	private final ResourceLocation id;
     private final DataResource<Material> material;
@@ -67,13 +69,18 @@ public enum IceAndFireMaterials {
 
     IceAndFireMaterials(String path, String harvestTierName, String levelHint, Tier equivalentTier, @Nullable TagKey<Block> additionalBlocksForTool) {
         this.id = getResourceLocation(IceAndFire.MOD_ID, path);
+        DragonGear.LOGGER.info("Generating Material with ID: " + this.id);
         this.material = DataResource.material(this.id);
         this.harvestTier = HarvestTier.create(harvestTierName, levelHint);
         this.equivalentIncorrectForToolTag = equivalentTier.getIncorrectBlocksForDrops();
         this.additionalBlocksForTool = additionalBlocksForTool;
     }
 
-    public DataResource<Material> getMaterial() {
+    public static DataResource<Material> getColorMaterialInstance(IceAndFireMaterials genericMat, String color) {
+		return DataResource.material(getResourceLocation(genericMat.id + "_" + color));
+    }
+    
+	public DataResource<Material> getMaterial() {
         return material;
     }
 
@@ -90,7 +97,7 @@ public enum IceAndFireMaterials {
         }
     }
     
-    public ResourceLocation getResourceLocation(String name) {
+    public static ResourceLocation getResourceLocation(String name) {
     	if(name.contains(":")) {
     		return ResourceLocation.tryParse(name);
     	}

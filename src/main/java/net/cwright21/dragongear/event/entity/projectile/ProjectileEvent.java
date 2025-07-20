@@ -13,7 +13,7 @@ import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.silentchaos512.gear.entity.projectile.GearArrowEntity;
 import net.silentchaos512.gear.util.TraitHelper;
-public class ProjectileEvents {
+public class ProjectileEvent {
 
 	
 	public static void onArrowLoose(EntityJoinLevelEvent event) {

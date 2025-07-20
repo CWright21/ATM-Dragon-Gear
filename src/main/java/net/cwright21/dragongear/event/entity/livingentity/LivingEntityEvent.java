@@ -1,4 +1,4 @@
-package net.cwright21.dragongear.event;
+package net.cwright21.dragongear.event.entity.livingentity;
 
 import net.cwright21.dragongear.util.Const;
 
@@ -20,9 +20,9 @@ import net.silentchaos512.gear.util.TraitHelper;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class ServerEvents {
+public class LivingEntityEvent {
     
-	public static float onEntityDamage(LivingEntity entity, DamageSource source, float amount) {
+	public static float applyCustomProtectionTraits(LivingEntity entity, DamageSource source, float amount) {
 		
 		//reduce projectile damage by 5% per level of Thick Hide
         if (source.is(net.minecraft.tags.DamageTypeTags.IS_PROJECTILE)) {

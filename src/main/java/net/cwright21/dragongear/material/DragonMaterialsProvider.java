@@ -1,7 +1,8 @@
 package net.cwright21.dragongear.material;
 
 import net.cwright21.dragongear.DragonGear;
-import net.cwright21.dragongear.core.IceAndFireMaterials;
+import net.cwright21.dragongear.core.materials.IceAndFireMaterials;
+import net.minecraft.ChatFormatting;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentUtils;
@@ -23,8 +24,11 @@ import net.silentchaos512.gear.setup.gear.PartTypes;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.util.Color;
 import com.mojang.brigadier.Message;
+import com.iafenvoy.iceandfire.data.SeaSerpent;
 import com.iafenvoy.iceandfire.data.TrollType;
+import com.iafenvoy.iceandfire.item.ItemSeaSerpentScales;
 import com.iafenvoy.iceandfire.registry.IafItems;
+
 
 
 //import dev.architectury.registry.registries.RegistrySupplier;
@@ -323,7 +327,18 @@ public class DragonMaterialsProvider extends MaterialsProviderBase {
     }
     
     private void addSeaSerpentScales(Collection<MaterialBuilder<?>> ret) {
-    	return;
+    	List<SeaSerpent> seaSerpents = SeaSerpent.values();
+    	for(SeaSerpent serpent : seaSerpents) {
+    		ret.add(MaterialBuilder.simple(IceAndFireMaterials.getColorMaterialInstance(IceAndFireMaterials.SEA_SERPENT_SCALES, serpent.getName()))
+                    .crafting(serpent.scale.get(), MaterialCategories.ORGANIC, MaterialCategories.ADVANCED )
+                    .display(getDisplayName(serpent.getName() + "Sea Serpent Scale"),serpent.getColor().getColor(), TextureType.LOW_CONTRAST)
+                    //main
+                    .mainStatsCommon(300, 4, 12, 8, 0.9f)
+                    .mainStatsArmor(4, 8, 7, 4, 2.5f, 12.5f)
+                    .trait(PartTypes.MAIN, Const.Traits.FLEXIBLE, 1)
+                    .trait(PartTypes.MAIN, Const.Traits.AQUATIC, 2)
+            );
+    	}
     }
     
     private void addDeathWormChitin(Collection<MaterialBuilder<?>> ret) {

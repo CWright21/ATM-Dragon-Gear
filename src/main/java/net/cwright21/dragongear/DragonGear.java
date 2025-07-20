@@ -1,7 +1,7 @@
 package net.cwright21.dragongear;
 
-import net.cwright21.dragongear.event.ServerEvents;
-import net.cwright21.dragongear.event.entity.projectile.ProjectileEvents;
+import net.cwright21.dragongear.event.entity.livingentity.LivingEntityEvent;
+import net.cwright21.dragongear.event.entity.projectile.ProjectileEvent;
 import net.cwright21.dragongear.material.DragonMaterialsProvider;
 import net.cwright21.dragongear.trait.CustomTraitsProvider;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -30,17 +30,17 @@ public class DragonGear {
         gen.addProvider(true, new CustomTraitsProvider(gen));
         event.createProvider(CustomLanguageProvider::new);
         
-        LivingEntityEvents.DAMAGE.register(ServerEvents::onEntityDamage);
+        LivingEntityEvents.DAMAGE.register(LivingEntityEvent::applyCustomProtectionTraits);
     }
     
     @SubscribeEvent
     public static void onEntityJoinWorld(EntityJoinLevelEvent event) {
-    	ProjectileEvents.onArrowLoose(event);
+    	ProjectileEvent.onArrowLoose(event);
     }
     
     
     @SubscribeEvent
-    public static void onArrowTick(EntityTickEvent.Post event) {
-    	ProjectileEvents.onArrowTick(event);
+    public static void onEntityTick(EntityTickEvent.Post event) {
+    	ProjectileEvent.onArrowTick(event);
     }
 }

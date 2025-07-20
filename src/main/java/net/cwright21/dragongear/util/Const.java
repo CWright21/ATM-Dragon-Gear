@@ -11,6 +11,7 @@ public final class Const {
         public static final DataResource<Trait> THICK_HIDE = DataResource.trait(modId("thick_hide"));
         public static final DataResource<Trait> DRAGON_PROTECTION = DataResource.trait(modId("dragon_protection"));
         public static final DataResource<Trait> STYMPHALIAN = DataResource.trait(modId("stymphalian"));
+        //public static final DataResource<Trait> LIGHTNING_RESISTANT = DataResource.trait(modId("lightning_resistant"));
 	}
 	
 	private static ResourceLocation modId(String path) {
